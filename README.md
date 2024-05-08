@@ -1,5 +1,27 @@
 # Sitecore.Sweep
 
+## TODO
+
+- check / add 10.3 support for Docker
+
+## Downloads ⬇️
+
+### Install packages
+
+> [Sitecore install packages can be found here](dist)
+
+## Changelog
+
+Version 1.2.0
+
+- Upgrade to Sitecore 10.3.1
+- Change .NET target framework to 4.8.1
+- Switch projects to package references
+- Clean up old Sitcore package versions
+- Add NuGet.config
+
+## About
+
 ### What is this?
 
 A simple extensible module for Sitecore for the automatic cleaning of HTML in Items.
@@ -50,18 +72,3 @@ There's also a new button added to the Rich Text Editor that allows the pipeline
 You can grab the source and build it yourself to include in your project. But if you'd rather just work with a package, you can grab the latest release from the `dist` folder. The full-package will install the module as well as a Clean HTML button into the default Rich Text Editor profile.
 
 The current release has been tested with Sitecore 6.6, 7.2, 8.2 and 9.3, and is expected to work with versions in-between. Please raise an issue if you come across any problems.
-
-### Sitecore 6.x
-
-Sitecore 6.6 uses a different version of HtmlAgilityPack, version `1.4.0.0`. If you are building from source, you will need to account for this as the solution currently doesn't. However if you just want the build, the `dist` folder already contains a working build for Sitecore 6.6.
-
-### Sitecore 9.x
-
-Sitecore 9.0 - 9.3 also use a different version of HtmlAgilityPack, version `1.4.9.5`. You can use the regular build of Sitecore.Sweep with this version, but should include this assembly binding redirect in your `web.config`:
-
-```xml
-<dependentAssembly>
-	<assemblyIdentity name="HtmlAgilityPack" publicKeyToken="bd319b19eaf3b43a" culture="neutral" />
-	<bindingRedirect oldVersion="1.4.0.0-1.4.9.5" newVersion="1.4.9.5" />
-</dependentAssembly>
-```
